@@ -1,9 +1,13 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Shirt {
 
     private String material;
     private String color;
     private String type;
-    private String Length;
+    private String length;
 
     public Shirt(){
     }
@@ -12,9 +16,16 @@ public class Shirt {
         this.type = type;
         this.material = material;
         this.color = color;
-        this.Length = length;
+        this.length = length;
     }
 
+    public ArrayList sArray() {
+
+        ArrayList<String> shirtArray = new ArrayList<>();
+        List<String> tempList = new ArrayList<String>(Arrays.asList(type, material, color, length.toString()));
+        shirtArray.addAll(tempList);
+        return shirtArray;
+    }
 
 
     /*************/
@@ -44,11 +55,11 @@ public class Shirt {
     }
 
     public String getLength() {
-        return Length;
+        return length;
     }
 
     public void setLength(String length) {
-        Length = length;
+        this.length = length;
     }
 }
 

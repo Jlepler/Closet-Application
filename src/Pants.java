@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.*;
 
 public class Pants {
 
@@ -17,7 +18,13 @@ public class Pants {
         this.length = length;
     }
 
-    public String jacketArray[] = {material, color, activity, length};
+    public ArrayList pArray() {
+
+        ArrayList<String> pantArray = new ArrayList<>();
+        List<String> tempList = new ArrayList<String>(Arrays.asList(material, color, activity, length.toString()));
+        pantArray.addAll(tempList);
+        return pantArray;
+    }
 
 
 

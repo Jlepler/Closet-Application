@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Shoes {
 
     private String type;
@@ -12,6 +14,15 @@ public class Shoes {
         this.color = color;
         this.waterproof = waterproof;
     }
+
+    public ArrayList shArray() {
+
+        ArrayList<String> shoeArray = new ArrayList<>();
+        List<String> tempList = new ArrayList<String>(Arrays.asList(type, color, waterproof.toString().replaceAll("false","Not waterproof").replaceAll("true","Waterproof")));
+        shoeArray.addAll(tempList);
+        return shoeArray;
+    }
+
 
 
     /***************/

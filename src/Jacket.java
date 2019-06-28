@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.*;
@@ -10,7 +11,7 @@ public class Jacket {
     private Boolean waterProof;
     private String activity;
 
-    public Jacket(){
+    public Jacket() {
     }
 
     public Jacket(String type, String material, String color, Boolean waterProof, String activity) {
@@ -20,8 +21,27 @@ public class Jacket {
         this.waterProof = waterProof;
         this.activity = activity;
 
+
+        ArrayList<String> jacketArray = new ArrayList<>();
+        List<String> tempList = new ArrayList<String>(Arrays.asList(type, material, color, waterProof.toString(), activity));
+        jacketArray.addAll(tempList);
+
+
     }
 
+    public ArrayList jArray() {
+
+    ArrayList<String> jacketArray = new ArrayList<>();
+    List<String> tempList = new ArrayList<String>(Arrays.asList(type, material, color, waterProof.toString(), activity));
+    jacketArray.addAll(tempList);
+    return jacketArray;
+    }
+
+
+    @Override
+    public String toString(){
+        return type + ", " + material + ", " + color + ", " + waterProof + ", " + activity;
+    }
 
 
 
